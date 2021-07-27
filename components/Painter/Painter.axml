@@ -1,0 +1,23 @@
+<view style='position: relative;{{customStyle}};{{painterStyle}}'>
+  <block a:if="{{!use2D}}">
+    <canvas id="photo" style="{{photoStyle}};position: absolute; left: -9999px; top: -9999rpx;" />
+    <block a:if="{{dancePalette}}" >
+      <canvas id="bottom" style="{{painterStyle}};position: absolute;" />
+      <canvas id="k-canvas" style="{{painterStyle}};position: absolute;" />
+      <canvas id="top" style="{{painterStyle}};position: absolute;" />
+      <canvas 
+        id="front" 
+        style="{{painterStyle}};position: absolute;"
+        disable-scroll="true"
+        onTouchStart="onTouchStart"
+        onTouchMove="onTouchMove"
+        onTouchEnd="onTouchEnd"
+        onTouchCancel="onTouchCancel"
+         />
+      </block>
+  </block>
+  <block a:if="{{use2D}}">
+    <canvas type="2d" id="photo" style="{{photoStyle}};" />
+  </block>
+
+</view>
